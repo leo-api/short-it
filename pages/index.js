@@ -88,18 +88,22 @@ export default function Index() {
     }
 
     const handleHomeClick = () => {
-        if(router.pathname !== '/') {
-            window.location.assign('/');
-        }
+        window.location.assign('/');
+    }
+
+    const handleGithubClick = () => {
+        window.open('https://github.com/leo-api/short-it', '_blank');
     }
 
     return (
-        <div className="main-wrapper">
+        <>
+                <div className="main-wrapper">
             <h1 className="title" ref={titleRef}>Short it</h1>
-            <div className="home-container">
-                <img src="./home-icon.svg" alt="Home Icon svg" className="home-icon" onClick={handleHomeClick} />
+            <div className="home-container" onClick={handleHomeClick} >
+                <img src="./home-icon.svg" alt="Home Icon svg" className="home-icon" />
                 <p className="home-text">Short it</p>
             </div>
+            <img src="./github-icon.svg" alt="Github Icon svg" className="github-icon" onClick={handleGithubClick}/>
             <p className="slogan" ref={sloganRef}>Let's make things short and simple.</p>
             <div className="main-container">
                 <label className="index-input-label" htmlFor="index-input-id">Enter your long URL here</label>
@@ -124,5 +128,16 @@ export default function Index() {
                 <button className="button index" disabled={disableBtn} onClick={handleButtonClick}>Short it</button>
             </div>
         </div>
+        <div className="footer">
+            <div className="footer-icon-container">
+                <p className="footer-icons-text">Built with:</p>
+                <img src="./next-icon.svg" alt="Next Icon svg" className="footer-icon" />
+                <img src="./react-icon.svg" alt="React Icon svg" className="footer-icon" />
+                <img src="./node-icon.svg" alt="Node Icon svg" className="footer-icon" />
+                <img src="./firebase-icon.svg" alt="Firebase Icon svg" className="footer-icon" />
+                <img src="./vercel-icon.svg" alt="Firebase Icon svg" className="footer-icon" />
+            </div>
+        </div>
+        </>
     )
 }

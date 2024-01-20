@@ -1,3 +1,14 @@
+.github-icon {
+    position: absolute;
+    top: max(2vw, 3vh);
+    right: max(2vw, 3vh);
+    width: max(clamp(20px, 2.25vw, 50px), clamp(20px, 4vh, 50px));
+    cursor: pointer;
+    transition: filter 0.3s ease-in-out;
+}
+.github-icon:hover {
+    filter: saturate(50%);
+}
 .index-input-label {
     min-width: 250px;
     width: 35vw;
@@ -76,5 +87,10 @@
     }
     .index-input-label {
         width: 50vw;
+    }
+}
+@media (orientation: landscape) and (max-height: 360px) {
+    .button.index {
+        margin-top: 0;
     }
 }

@@ -4,6 +4,7 @@
     --light-gray-color: #666;
     --lighter-gray-color: #888;
     --border-color: #d1d1d1;
+    --light-border-color: #e2e2e2;
     --padding-clamp-small: clamp(2px, 0.5vh, 4px) clamp(5px, 1vh ,10px);
     --padding-clamp-medium: clamp(4px, 1vh, 8px) clamp(10px, 2vh ,20px);
     --padding-clamp-large: clamp(7px, 1vh, 14px) clamp(18px, 2vh ,36px);
@@ -29,7 +30,7 @@
     transition: all 0.3s ease;
 }
 .home-container:hover .home-icon {
-    filter: grayscale(50%);
+    filter: saturate(50%);
 }
 .home-container:hover .home-text {
     translate: 0;
@@ -101,7 +102,34 @@
 .button:hover {
     background-color: #5ad6c7;
 }
-@media (orientation: landscape) and (max-height: 300px) {
+.footer {
+    user-select: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: clamp(25px, 8vh, 70px);
+    border-top: 1px solid var(--light-border-color);
+}
+.footer-icons-text {
+    font-size: min(clamp(12px, 1vw, 14px), clamp(12px, 1vh, 14px));
+    margin: 0 clamp(5px, 1vw, 10px);
+    color: var(--lighter-gray-color);
+}
+.footer-icon-container {
+    position: relative;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+}
+.footer-icon {
+    height: max(clamp(10px, 2.2vh, 20px), clamp(10px, 2vw, 20px));
+    margin: 0 clamp(5px, 1vw, 10px);
+}
+@media (orientation: landscape) and (max-height: 360px) {
     .title {
         margin-top: max(10vh, 5vw);
     }
