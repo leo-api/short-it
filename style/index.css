@@ -1,0 +1,80 @@
+.index-input-label {
+    min-width: 250px;
+    width: 35vw;
+    padding: var(--padding-clamp-large);
+    font-size: max(clamp(14px, 2vh, 24px), clamp(14px, 1.3vw, 24px));
+    color: var(--dark-gray-color);
+    margin-bottom: clamp(5px, 2vh, 20px);
+    user-select: none;
+}
+.index-input-container {
+    display: flex;
+}
+.index-input {
+    position: relative;
+    left: 50%;
+    translate: -50%;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    padding: var(--padding-clamp-large);
+    padding-right: 35px;
+    font-size: clamp(14px, 2.5vh, 20px);
+    text-overflow: ellipsis;
+    outline: none;
+    min-width: 250px;
+    width: 35vw;
+}
+.index-enter-icon {
+    position: relative;
+    border-radius: var(--border-radius);
+    border: 1px solid transparent;
+    background-color: transparent;
+    top: 50%;
+    translate: calc((50% + 2px) * -1);
+    padding: clamp(5px, 2vh, 10px);
+    height: clamp(20px, 7vh, 35px);
+    cursor: pointer;
+    margin: 1px;
+}
+.index-enter-icon:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.index-input::placeholder {
+    color: var(--lighter-gray-color);
+}
+.index-input:active, .index-input:focus {
+    border: 1px solid rgb(224, 224, 224);
+}
+.alert-message {
+    padding: var(--padding-clamp-small);
+    font-size: clamp(12px, 2.25vh, 18px);
+    min-height: 30px;
+    min-width: 250px;
+    width: 35vw;
+    padding-left: 0;
+    font-style: italic;
+    font-weight: 100;
+    color: rgb(200, 15, 15);
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+.fade-out {
+  opacity: 0;
+}
+.button.index {
+    padding: var(--padding-clamp-medium);
+    margin-top: clamp(5px, 4.8vh, 60px);
+}
+.button.index:disabled {
+    background-color: #beddd9;
+    cursor: default;
+}
+@media (orientation: portrait) and (min-width: 520px) {
+    .index-input {
+        width: 50vw;
+    }
+    .index-input-label {
+        width: 50vw;
+    }
+}
