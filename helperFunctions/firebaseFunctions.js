@@ -1,4 +1,4 @@
-import admin from "@/pages/api/firebaseAdmin";
+import admin from "@/firebase/firebaseAdmin";
 
 export async function readDataFromDb(nodePath) {
     try {
