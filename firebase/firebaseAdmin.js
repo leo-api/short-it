@@ -17,7 +17,7 @@ const serviceAccount = {
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://short-url-69298-default-rtdb.firebaseio.com',
+    databaseURL: process.env.DATABASE_URL,
   });
 }
 
